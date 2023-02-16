@@ -18,9 +18,9 @@ const Sidebar = ({ menu }: SidebarProps) => {
 
   return (
     <Box
-      bg="primary.200"
+      bg="main.200"
       borderRight="hairline"
-      borderColor="primary.300"
+      borderColor="main.300"
       w={isOpen ? "250px" : "70px"}
       minW={isOpen ? "250px" : "70px"}
       transition="all"
@@ -32,11 +32,8 @@ const Sidebar = ({ menu }: SidebarProps) => {
             <>
               <Link href="/">
                 <Box cursor="pointer">
-                  <Flex h="fit-content" w="fit-content" flexDir="column" my="micro" ml="kilo">
+                  <Flex h="fit-content" w="fit-content" flexDir="column" my={4} ml={6}>
                     <Box>Logo</Box>
-                    <Text fontSize="xs" alignSelf="flex-end">
-                      Backoffice
-                    </Text>
                   </Flex>
                 </Box>
               </Link>
@@ -45,7 +42,7 @@ const Sidebar = ({ menu }: SidebarProps) => {
                   aria-label="Menu"
                   icon={<Icon as={Bars3Icon} h={4} w={4} />}
                   variant="ghost"
-                  mr="centi"
+                  mr={2}
                   size="xs"
                   onClick={close}
                 />
@@ -55,23 +52,25 @@ const Sidebar = ({ menu }: SidebarProps) => {
             <Link href="/">
               <Center w={"100%"} cursor="pointer">
                 <Box>
-                  <Box>LogoSymbol</Box>
+                  <Box>S</Box>
                 </Box>
               </Center>
             </Link>
           )}
         </Flex>
       </Flex>
-      <Flex flexDir="column" pt="nano">
+      <Flex flexDir="column" pt={5}>
         {menu.map((itemMenu) => (
           <Link key={itemMenu.title} href={itemMenu.path}>
             <Button
               justifyContent={isOpen ? "flex-start" : "center"}
-              leftIcon={isOpen && <Icon ml="kilo" as={itemMenu.icon} />}
+              leftIcon={isOpen ? <Icon ml={4} as={itemMenu.icon} /> : undefined}
               variant="ghost"
               iconSpacing={0}
+              w="100%"
+              borderRadius={0}
             >
-              {isOpen ? <Text ml="milli">{itemMenu.title}</Text> : <Icon as={itemMenu.icon} />}
+              {isOpen ? <Text ml={4}>{itemMenu.title}</Text> : <Icon as={itemMenu.icon} />}
             </Button>
           </Link>
         ))}

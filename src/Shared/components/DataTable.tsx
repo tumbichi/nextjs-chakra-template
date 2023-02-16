@@ -49,10 +49,10 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
                 {columns.map(({ styles, onClick, selector }) => (
                   <Td
                     key={`td-row-${String(row)}`}
-                    borderColor="primary.300"
+                    borderColor="main.300"
                     borderWidth="1px"
-                    px="micro"
-                    py="centi"
+                    px={2}
+                    py={2}
                     onClick={onClick ? () => onClick(row) : undefined}
                     {...styles}
                   >
@@ -65,17 +65,17 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
       </ChakraUITable>
 
       {loading && (
-        <Center flexDir="column" h="100%" py="xxxlarge" w="100%">
+        <Center flexDir="column" h="100%" py="16" w="100%">
           <Spinner size="xl" />
         </Center>
       )}
 
       {!loading && data.length === 0 && (
-        <Center flexDir="column" h="100%" py="small" w="100%">
-          <Box bg="primary.200" borderRadius="circular" p="small">
-            <Icon as={ArchiveBoxXMarkIcon} color="primary.800" fontSize="100px" />
+        <Center flexDir="column" h="100%" py={8} w="100%">
+          <Box bg="main.200" borderRadius="circular" p={8}>
+            <Icon as={ArchiveBoxXMarkIcon} color="main.800" fontSize="100px" />
           </Box>
-          <Text color="primary.800" fontSize="2xl" fontWeight="semibold" mt="nano">
+          <Text color="main.800" fontSize="2xl" fontWeight="semibold" mt={1}>
             Sin resultados
           </Text>
         </Center>

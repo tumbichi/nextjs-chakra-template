@@ -15,29 +15,28 @@ const Header = ({ menu }: HeaderProps): JSX.Element => {
   const ColorModeIcon = useColorModeValue(SunIcon, MoonIcon);
 
   return (
-    <Flex h="70px" px="kilo" justifyContent="space-between" borderBottom="1px solid" borderColor="primary.300">
-      <Center py="centi">
+    <Flex h="70px" px={4} justifyContent="space-between" borderBottom="1px solid" borderColor="main.300">
+      <Center py={3}>
         {!isOpen && (
           <IconButton
             aria-label="Menu"
             icon={<Icon as={Bars3Icon} h={4} w={4} />}
             variant="ghost"
-            mr="centi"
-            px="femto"
+            mr={2}
+            px={3}
             size="xs"
             onClick={open}
           />
         )}
         <SearchInput />
       </Center>
-      <Center gap="deka">
+      <Center gap={2}>
         <IconButton
           aria-label="dark mode"
           icon={<Icon as={ColorModeIcon} />}
           variant="ghost"
           onClick={toggleColorMode}
         />
-        <IconButton aria-label="apps" icon={<Icon as={Squares2X2Icon} />} variant="ghost" />
         <IconButton aria-label="notifications" icon={<Icon as={BellIcon} />} variant="ghost" />
         <ProfileMenu menu={menu} username={"pity"} profileImageUrl="" />
       </Center>

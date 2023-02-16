@@ -7,15 +7,14 @@ const SearchInput = () => {
       <Input placeholder="Buscar" borderRadius="base" variant="filled" />
       <InputRightElement p="atto">
         <IconButton
-          mr="femto"
           h="100%"
           w="100%"
-          px="pico"
-          py="atto"
+          px={2}
+          py={2}
           aria-label="search icon"
           icon={<SearchIcon color="black" />}
           borderRadius="base"
-          variant="quaternary"
+          variant="ghost"
         />
       </InputRightElement>
     </InputGroup>
