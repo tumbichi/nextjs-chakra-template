@@ -1,7 +1,9 @@
-import { Flex, Stack } from "@chakra-ui/react";
 import React, { PropsWithChildren } from "react";
-import { Header, Sidebar } from "../components";
-import { SidebarProvider } from "../contexts/SidebarContext";
+import { Flex, Stack } from "@chakra-ui/react";
+
+import { Header, Sidebar } from "@/Shared/components";
+import { SidebarProvider } from "@/Shared/contexts/SidebarContext";
+
 const HEADER_HEIGHT = "70px";
 
 const AppLayout = ({ children }: PropsWithChildren) => {
