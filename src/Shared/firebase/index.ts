@@ -1,7 +1,7 @@
 // import { initializeApp } from "firebase/app";
 // import { getFirestore } from "firebase/firestore";
 // import { getAuth } from "firebase/auth";
-import firebaseConfig from "./config";
+// import firebaseConfig from "./config";
 
 // const firebase = initializeApp(firebaseConfig);
 

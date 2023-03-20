@@ -1,8 +1,7 @@
-import React from "react";
 import useAllCharacters from "../data/CharacterRepository/hooks/useAllCharacters";
 
 const CharacterList = () => {
-  const { loading, characters, error, paginationMetadata } = useAllCharacters();
+  const { loading, characters, error } = useAllCharacters();
 
   if (loading) return <div>Loading</div>;
 

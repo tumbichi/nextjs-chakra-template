@@ -24,11 +24,9 @@ interface FailFetchAction {
   payload: FailFetchActionPayload;
 }
 
-export const startFetch = (): StartFetchAction => {
-  return {
-    type: "START_FETCH",
-  };
-};
+export const startFetch = (): StartFetchAction => ({
+  type: "START_FETCH",
+});
 
 export const successFetchAction = (payload: SuccessFetchActionPayload): SuccessFetchAction => ({
   type: "SUCCESS_FETCH",

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { PropsWithChildren } from "react";
 import { Flex, Stack } from "@chakra-ui/react";
 
@@ -21,7 +22,7 @@ const AppLayout = ({ children }: PropsWithChildren) => {
       <SidebarProvider>
         <Flex>
           <Drawer menu={sidebarMenu} />
-          <Sidebar menu={sidebarMenu} display={{ base: "none", sm: "block" }} />
+          <Sidebar display={{ base: "none", sm: "block" }} menu={sidebarMenu} />
           <Stack flex="1" spacing={0}>
             <Header
               menu={[
@@ -30,7 +31,7 @@ const AppLayout = ({ children }: PropsWithChildren) => {
                 { label: "Salir", onClick: () => console.warn("Not implemented yet") },
               ]}
             />
-            <Flex minH={`calc(100vh - ${HEADER_HEIGHT})`} direction="column" px="deka" pt="xlarge">
+            <Flex direction="column" minH={`calc(100vh - ${HEADER_HEIGHT})`} pt="xlarge" px="deka">
               {children}
             </Flex>
           </Stack>

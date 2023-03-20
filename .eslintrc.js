@@ -17,6 +17,7 @@ module.exports = {
 	],
 	rules: {
 		"class-methods-use-this": ["error", { enforceForClassFields: false }],
+		"default-param-last": "off",
 		"import/extensions": ["error", "never"],
 		"import/no-anonymous-default-export": "warn",
 		"import/no-import-module-exports": "off",
