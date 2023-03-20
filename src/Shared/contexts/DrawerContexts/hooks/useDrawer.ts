@@ -1,5 +1,7 @@
 import { useContext } from "react";
-import DrawerContext, { DrawerContext as IDrawerContext } from "../DrawerContext";
+import DrawerContext, {
+  DrawerContext as IDrawerContext,
+} from "../DrawerContext";
 
 const useDrawer = (): IDrawerContext => {
   const context = useContext<IDrawerContext | undefined>(DrawerContext);

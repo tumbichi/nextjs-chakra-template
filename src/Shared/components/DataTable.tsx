@@ -36,7 +36,13 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
         <Thead>
           <Tr>
             {columns.map((column) => (
-              <Th key={String(column)} borderColor="neutral.300" borderWidth="1px" px="micro" py="centi">
+              <Th
+                key={String(column)}
+                borderColor="neutral.300"
+                borderWidth="1px"
+                px="micro"
+                py="centi"
+              >
                 {column.label}
               </Th>
             ))}
@@ -73,7 +79,11 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
       {!loading && data.length === 0 && (
         <Center flexDir="column" h="100%" py={8} w="100%">
           <Box bg="neutral.200" borderRadius="circular" p={8}>
-            <Icon as={ArchiveBoxXMarkIcon} color="neutral.800" fontSize="100px" />
+            <Icon
+              as={ArchiveBoxXMarkIcon}
+              color="neutral.800"
+              fontSize="100px"
+            />
           </Box>
           <Text color="neutral.800" fontSize="2xl" fontWeight="semibold" mt={1}>
             Sin resultados

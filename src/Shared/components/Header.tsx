@@ -1,5 +1,17 @@
-import { Center, Flex, Icon, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import { Bars3Icon, BellIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import {
+  Center,
+  Flex,
+  Icon,
+  IconButton,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import {
+  Bars3Icon,
+  BellIcon,
+  MoonIcon,
+  SunIcon,
+} from "@heroicons/react/24/outline";
 
 import { useSidebar } from "Shared/contexts/SidebarContext";
 import { useDrawer } from "Shared/contexts/DrawerContexts";
@@ -19,7 +31,13 @@ const Header = ({ menu }: HeaderProps): JSX.Element => {
   const ColorModeIcon = useColorModeValue(SunIcon, MoonIcon);
 
   return (
-    <Flex borderBottom="1px solid" borderColor="neutral.300" h="70px" justifyContent="space-between" px={4}>
+    <Flex
+      borderBottom="1px solid"
+      borderColor="neutral.300"
+      h="70px"
+      justifyContent="space-between"
+      px={4}
+    >
       <Center py={3}>
         <IconButton
           aria-label="Menu"
@@ -49,7 +67,11 @@ const Header = ({ menu }: HeaderProps): JSX.Element => {
           variant="ghost"
           onClick={toggleColorMode}
         />
-        <IconButton aria-label="notifications" icon={<Icon as={BellIcon} />} variant="ghost" />
+        <IconButton
+          aria-label="notifications"
+          icon={<Icon as={BellIcon} />}
+          variant="ghost"
+        />
         <ProfileMenu menu={menu} profileImageUrl="" username={"pity"} />
       </Center>
     </Flex>

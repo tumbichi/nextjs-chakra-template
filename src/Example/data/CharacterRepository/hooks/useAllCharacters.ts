@@ -1,6 +1,12 @@
 import { useEffect, useReducer } from "react";
-import { failFetchAction, startFetch, successFetchAction } from "../actions/allCharactersAction";
-import allCharactersReducer, { initialState } from "../reducers/allCharactersReducer";
+import {
+  failFetchAction,
+  startFetch,
+  successFetchAction,
+} from "../actions/allCharactersAction";
+import allCharactersReducer, {
+  initialState,
+} from "../reducers/allCharactersReducer";
 import getAllCharacters from "../services/getAllCharacters";
 
 const useAllCharacters = () => {
@@ -10,7 +16,12 @@ const useAllCharacters = () => {
     dispatch(startFetch());
     getAllCharacters()
       .then((response) => {
-        dispatch(successFetchAction({ data: response.results, paginationMetadata: response.info }));
+        dispatch(
+          successFetchAction({
+            data: response.results,
+            paginationMetadata: response.info,
+          })
+        );
       })
       .catch((e) => {
         dispatch(failFetchAction({ error: e.message }));

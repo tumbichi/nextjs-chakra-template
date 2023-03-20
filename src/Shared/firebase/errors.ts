@@ -25,7 +25,8 @@ const firebaseErrors = [
   },
   {
     code: "auth/too-many-requests",
-    message: "Usted intento demasiadas veces, por favor intente de nuevo mas tarde",
+    message:
+      "Usted intento demasiadas veces, por favor intente de nuevo mas tarde",
   },
   {
     code: "auth/wrong-password",

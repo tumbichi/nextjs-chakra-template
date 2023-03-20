@@ -1,5 +1,10 @@
 import { SearchIcon } from "@chakra-ui/icons";
-import { IconButton, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import {
+  IconButton,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
 
 const SearchInput = () => (
   <InputGroup colorScheme="primary">

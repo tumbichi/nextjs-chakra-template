@@ -23,18 +23,29 @@ import ItemMenu from "Shared/types/ItemMenu";
 
 import Logo from "./Logo";
 
-interface DrawerProps extends Omit<ChakraDrawerProps, "onClose" | "isOpen" | "children"> {
+interface DrawerProps
+  extends Omit<ChakraDrawerProps, "onClose" | "isOpen" | "children"> {
   menu: ItemMenu[];
 }
 
 const Drawer = ({ menu, ...drawerProps }: DrawerProps) => {
   const { isOpen, close } = useDrawer();
   return (
-    <ChakraDrawer placement={"left"} {...drawerProps} isOpen={isOpen} onClose={close}>
+    <ChakraDrawer
+      placement={"left"}
+      {...drawerProps}
+      isOpen={isOpen}
+      onClose={close}
+    >
       <Hide above="sm">
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader alignItems="center" borderBottomWidth="1px" display="flex" justifyContent="space-between">
+          <DrawerHeader
+            alignItems="center"
+            borderBottomWidth="1px"
+            display="flex"
+            justifyContent="space-between"
+          >
             <Box cursor="pointer">
               <Flex flexDir="column" h="fit-content" w="fit-content">
                 <Logo />
@@ -58,11 +69,17 @@ const Drawer = ({ menu, ...drawerProps }: DrawerProps) => {
                     borderRadius={0}
                     iconSpacing={0}
                     justifyContent={isOpen ? "flex-start" : "center"}
-                    leftIcon={isOpen ? <Icon as={itemMenu.icon} ml={4} /> : undefined}
+                    leftIcon={
+                      isOpen ? <Icon as={itemMenu.icon} ml={4} /> : undefined
+                    }
                     variant="ghost"
                     w="100%"
                   >
-                    {isOpen ? <Text ml={4}>{itemMenu.title}</Text> : <Icon as={itemMenu.icon} />}
+                    {isOpen ? (
+                      <Text ml={4}>{itemMenu.title}</Text>
+                    ) : (
+                      <Icon as={itemMenu.icon} />
+                    )}
                   </Button>
                 </Link>
               ))}

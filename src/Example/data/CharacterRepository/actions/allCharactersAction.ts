@@ -28,16 +28,23 @@ export const startFetch = (): StartFetchAction => ({
   type: "START_FETCH",
 });
 
-export const successFetchAction = (payload: SuccessFetchActionPayload): SuccessFetchAction => ({
+export const successFetchAction = (
+  payload: SuccessFetchActionPayload
+): SuccessFetchAction => ({
   type: "SUCCESS_FETCH",
   payload,
 });
 
-export const failFetchAction = (payload: FailFetchActionPayload): FailFetchAction => ({
+export const failFetchAction = (
+  payload: FailFetchActionPayload
+): FailFetchAction => ({
   type: "FAIL_FETCH",
   payload,
 });
 
-type AllCharactersAction = StartFetchAction | SuccessFetchAction | FailFetchAction;
+type AllCharactersAction =
+  | StartFetchAction
+  | SuccessFetchAction
+  | FailFetchAction;
 
 export default AllCharactersAction;

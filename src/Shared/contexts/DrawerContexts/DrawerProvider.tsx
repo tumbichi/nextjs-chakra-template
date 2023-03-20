@@ -5,9 +5,18 @@ import { useDisclosure } from "@chakra-ui/react";
 import DrawerContext from "./DrawerContext";
 
 const DrawerProvider = ({ children }: PropsWithChildren): JSX.Element => {
-  const { isOpen, onOpen: open, onClose: close, onToggle: toggle } = useDisclosure();
+  const {
+    isOpen,
+    onOpen: open,
+    onClose: close,
+    onToggle: toggle,
+  } = useDisclosure();
 
-  return <DrawerContext.Provider value={{ isOpen, open, close, toggle }}>{children}</DrawerContext.Provider>;
+  return (
+    <DrawerContext.Provider value={{ isOpen, open, close, toggle }}>
+      {children}
+    </DrawerContext.Provider>
+  );
 };
 
 export default DrawerProvider;

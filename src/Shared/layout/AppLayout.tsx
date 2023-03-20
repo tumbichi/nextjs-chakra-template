@@ -26,12 +26,26 @@ const AppLayout = ({ children }: PropsWithChildren) => {
           <Stack flex="1" spacing={0}>
             <Header
               menu={[
-                { label: "Home", onClick: () => console.warn("Not implemented yet") },
-                { label: "Nosotros", onClick: () => console.warn("Not implemented yet") },
-                { label: "Salir", onClick: () => console.warn("Not implemented yet") },
+                {
+                  label: "Home",
+                  onClick: () => console.warn("Not implemented yet"),
+                },
+                {
+                  label: "Nosotros",
+                  onClick: () => console.warn("Not implemented yet"),
+                },
+                {
+                  label: "Salir",
+                  onClick: () => console.warn("Not implemented yet"),
+                },
               ]}
             />
-            <Flex direction="column" minH={`calc(100vh - ${HEADER_HEIGHT})`} pt="xlarge" px="deka">
+            <Flex
+              direction="column"
+              minH={`calc(100vh - ${HEADER_HEIGHT})`}
+              pt="xlarge"
+              px="deka"
+            >
               {children}
             </Flex>
           </Stack>
