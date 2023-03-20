@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar, Button, Center, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { MenuItem as IMenuItem } from "../types/MenuItem";
+import { ContextMenuItem as IMenuItem } from "../types/MenuItem";
 
 interface ProfileMenuProps {
   menu: IMenuItem[];
@@ -10,7 +10,7 @@ interface ProfileMenuProps {
 }
 
 const ProfileMenu = ({ menu, profileImageUrl, username }: ProfileMenuProps): JSX.Element => (
-  <Center gap={4} bg="main.200" height="100%" px={2}>
+  <Center gap={4} bg="neutral.200" height="100%" px={2}>
     <Avatar h={9} w={9} borderWidth="3px" borderColor="black" src={profileImageUrl} />
     <Menu>
       <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="unstyled" display="flex">

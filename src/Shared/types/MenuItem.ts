@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface MenuItem {
+export default interface ContextMenuItem {
   label: ReactNode;
   onClick: () => void;
 }

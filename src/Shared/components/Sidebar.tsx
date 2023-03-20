@@ -1,42 +1,41 @@
 import Link from "next/link";
-import { Flex, IconButton, Text, Center, Box, Button, Icon } from "@chakra-ui/react";
+import { Flex, IconButton, Text, Center, Box, Button, Icon, BoxProps } from "@chakra-ui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useSidebar } from "@/Shared/contexts/SidebarContext";
 
-interface ItemMenu {
-  title: string;
-  path: string;
-  icon?: (props: React.ComponentProps<"svg"> & { title?: string; titleId?: string }) => JSX.Element;
-}
+import Logo from "./Logo";
+import LogoSymbol from "./LogoSymbol";
+import ItemMenu from "../types/ItemMenu";
 
-interface SidebarProps {
+interface SidebarProps extends BoxProps {
   menu: ItemMenu[];
 }
 
-const Sidebar = ({ menu }: SidebarProps) => {
+const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
   const { isOpen, close } = useSidebar();
 
   return (
     <Box
-      bg="main.200"
-      borderRight="hairline"
-      borderColor="main.300"
+      bg="neutral.200"
+      borderRight="1px"
+      borderColor="neutral.300"
       w={isOpen ? "250px" : "70px"}
       minW={isOpen ? "250px" : "70px"}
       transition="all"
       transitionDuration="0.3s"
+      {...boxProps}
     >
       <Flex w="100%">
-        <Flex h="70px" w="100%" justifyContent="space-between" alignItems="center">
+        <Center h="70px" w="100%" justifyContent="space-between" alignItems="center">
           {isOpen ? (
             <>
-              <Link href="/">
-                <Box cursor="pointer">
-                  <Flex h="fit-content" w="fit-content" flexDir="column" my={4} ml={6}>
-                    <Box>Logo</Box>
-                  </Flex>
-                </Box>
-              </Link>
+              <Box px={6}>
+                <Flex h="fit-content" w="fit-content" flexDir="column" cursor="pointer">
+                  <Link href="/">
+                    <Logo />
+                  </Link>
+                </Flex>
+              </Box>
               <Box>
                 <IconButton
                   aria-label="Menu"
@@ -49,15 +48,13 @@ const Sidebar = ({ menu }: SidebarProps) => {
               </Box>
             </>
           ) : (
-            <Link href="/">
-              <Center w={"100%"} cursor="pointer">
-                <Box>
-                  <Box>S</Box>
-                </Box>
-              </Center>
-            </Link>
+            <Center w={"100%"} cursor="pointer">
+              <Link href="/">
+                <LogoSymbol h="24px" w="24px" />
+              </Link>
+            </Center>
           )}
-        </Flex>
+        </Center>
       </Flex>
       <Flex flexDir="column" pt={5}>
         {menu.map((itemMenu) => (
