@@ -3,7 +3,7 @@ import { mode } from "@chakra-ui/theme-tools";
 import colors from "./colors";
 
 const styles = {
-  global: (props: Record<string, any>) => ({
+  global: (props: Record<string, unknown>) => ({
     body: {
       bg: mode("white", "black")(props),
       color: mode("black", "white")(props),

@@ -1,10 +1,10 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { Flex, Stack } from "@chakra-ui/react";
 
-import { Header, Sidebar } from "@/Shared/components";
-import { SidebarProvider } from "@/Shared/contexts/SidebarContext";
-import { DrawerProvider } from "../contexts/DrawerContexts";
-import Drawer from "../components/Drawer";
+import { SidebarProvider } from "Shared/contexts/SidebarContext";
+import { DrawerProvider } from "Shared/contexts/DrawerContexts";
+
+import { Drawer, Header, Sidebar } from "Shared/components";
 
 const HEADER_HEIGHT = "70px";
 

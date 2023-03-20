@@ -1,8 +1,5 @@
-import CharacterList from "@/Example/features/CharacterList";
-import React from "react";
+import CharacterList from "Example/features/CharacterList";
 
-const CharacterPage = () => {
-  return <CharacterList />;
-};
+const CharacterPage = () => <CharacterList />;
 
 export default CharacterPage;
