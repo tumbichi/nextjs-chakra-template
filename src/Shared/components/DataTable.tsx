@@ -40,8 +40,8 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
                 key={String(column)}
                 borderColor="neutral.300"
                 borderWidth="1px"
-                px="micro"
-                py="centi"
+                px={3}
+                py={4}
               >
                 {column.label}
               </Th>
@@ -57,8 +57,8 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
                     key={`td-row-${String(row)}`}
                     borderColor="neutral.300"
                     borderWidth="1px"
-                    px={2}
-                    py={2}
+                    px={3}
+                    py={3}
                     onClick={onClick ? () => onClick(row) : undefined}
                     {...styles}
                   >
@@ -71,7 +71,7 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
       </ChakraUITable>
 
       {loading && (
-        <Center flexDir="column" h="100%" py="16" w="100%">
+        <Center flexDir="column" h="100%" py={16} w="100%">
           <Spinner size="xl" />
         </Center>
       )}

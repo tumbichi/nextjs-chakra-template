@@ -41,6 +41,7 @@ const Header = ({ menu }: HeaderProps): JSX.Element => {
       <Center py={3}>
         <IconButton
           aria-label="Menu"
+          colorScheme="gray"
           display={{ base: "none", sm: !sidebar.isOpen ? "initial" : "none" }}
           icon={<Icon as={Bars3Icon} h={4} w={4} />}
           mr={2}
@@ -51,6 +52,7 @@ const Header = ({ menu }: HeaderProps): JSX.Element => {
         />
         <IconButton
           aria-label="Menu"
+          colorScheme="gray"
           display={{ base: "initial", sm: "none" }}
           icon={<Icon as={Bars3Icon} h={4} w={4} />}
           mr={2}
@@ -63,12 +65,14 @@ const Header = ({ menu }: HeaderProps): JSX.Element => {
       <Center gap={2}>
         <IconButton
           aria-label="dark mode"
+          colorScheme="gray"
           icon={<Icon as={ColorModeIcon} />}
           variant="ghost"
           onClick={toggleColorMode}
         />
         <IconButton
           aria-label="notifications"
+          colorScheme="gray"
           icon={<Icon as={BellIcon} />}
           variant="ghost"
         />

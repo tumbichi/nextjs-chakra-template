@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import colors from "./colors";
+import buttonTheme from "./components/buttonTheme";
 
 const styles = {
   global: (props: Record<string, unknown>) => ({
@@ -17,6 +18,10 @@ const styles = {
   }),
 };
 
-const theme = extendTheme({ colors, styles });
+const theme = extendTheme({
+  colors,
+  components: { Button: buttonTheme },
+  styles,
+});
 
 export default theme;
