@@ -1,0 +1,11 @@
+{
+  "errors": {
+    "Required": "Este campo es obligatorio",
+    "mustBePositive": "El valor debe mayor a 0",
+    "mustBeValidPostalCode": "El código postal debe ser 2942 o 2930",
+    "mustBeValidCity": "La ciudad debe ser Baradero o San Pedro"
+  },
+  "footer": {
+    "rightsReserved": "Todos los derechos reservados"
+  }
+}

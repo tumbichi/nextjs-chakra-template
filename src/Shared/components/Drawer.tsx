@@ -53,6 +53,7 @@ const Drawer = ({ menu, ...drawerProps }: DrawerProps) => {
             </Box>
             <IconButton
               aria-label="Menu"
+              colorScheme="gray"
               icon={<Icon as={Bars3Icon} h={4} w={4} />}
               mr={2}
               px={3}
@@ -67,6 +68,7 @@ const Drawer = ({ menu, ...drawerProps }: DrawerProps) => {
                 <Link key={itemMenu.title} href={itemMenu.path}>
                   <Button
                     borderRadius={0}
+                    colorScheme="gray"
                     iconSpacing={0}
                     justifyContent={isOpen ? "flex-start" : "center"}
                     leftIcon={

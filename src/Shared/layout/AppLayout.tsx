@@ -2,18 +2,24 @@
 import { PropsWithChildren } from "react";
 import { Flex, Stack } from "@chakra-ui/react";
 
+import { HomeModernIcon } from "@heroicons/react/24/outline";
+
 import { SidebarProvider } from "Shared/contexts/SidebarContext";
 import { DrawerProvider } from "Shared/contexts/DrawerContexts";
 
 import { Drawer, Header, Sidebar } from "Shared/components";
+import { useTranslation } from "Shared/i18n";
 
 const HEADER_HEIGHT = "70px";
 
 const AppLayout = ({ children }: PropsWithChildren) => {
+  const { t } = useTranslation("appLayout");
+
   const sidebarMenu = [
     {
-      title: "Home",
+      title: t("sidebar.menu.home"),
       path: "#",
+      icon: HomeModernIcon,
     },
   ];
 
@@ -27,15 +33,7 @@ const AppLayout = ({ children }: PropsWithChildren) => {
             <Header
               menu={[
                 {
-                  label: "Home",
-                  onClick: () => console.warn("Not implemented yet"),
-                },
-                {
-                  label: "Nosotros",
-                  onClick: () => console.warn("Not implemented yet"),
-                },
-                {
-                  label: "Salir",
+                  label: t("header.menu.logout"),
                   onClick: () => console.warn("Not implemented yet"),
                 },
               ]}
@@ -43,8 +41,8 @@ const AppLayout = ({ children }: PropsWithChildren) => {
             <Flex
               direction="column"
               minH={`calc(100vh - ${HEADER_HEIGHT})`}
-              pt="xlarge"
-              px="deka"
+              pt={4}
+              px={6}
             >
               {children}
             </Flex>

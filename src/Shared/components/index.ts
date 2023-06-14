@@ -4,3 +4,6 @@ export { default as SearchInput } from "./SearchInput";
 export { default as Sidebar } from "./Sidebar";
 export { default as Drawer } from "./Drawer";
 export { default as DataTable } from "./DataTable";
+export { default as Loading } from "./Loading";
+export { default as Logo } from "./Logo";
+export { default as LogoSymbol } from "./LogoSymbol";

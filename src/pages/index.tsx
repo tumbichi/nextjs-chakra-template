@@ -4,7 +4,7 @@ import DataTable from "Shared/components/DataTable";
 
 interface ParcelRow {
   name: string;
-  parcel: string;
+  service: string;
 }
 
 export default function Home() {
@@ -14,8 +14,8 @@ export default function Home() {
       selector: (row: ParcelRow) => row.name,
     },
     {
-      label: "Parcela",
-      selector: (row: ParcelRow) => row.parcel,
+      label: "Servicio",
+      selector: (row: ParcelRow) => row.service,
     },
   ];
   return (
@@ -30,14 +30,14 @@ export default function Home() {
         <DataTable
           columns={columns}
           data={[
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
-            { name: "Carlos", parcel: "12" },
+            { name: "Carlos", service: "Servicio 1" },
+            { name: "Carlos", service: "Servicio 2" },
+            { name: "Carlos", service: "Servicio 3" },
+            { name: "Carlos", service: "Servicio 4" },
+            { name: "Carlos", service: "Servicio 5" },
+            { name: "Carlos", service: "Servicio 6" },
+            { name: "Carlos", service: "Servicio 7" },
+            { name: "Carlos", service: "Servicio 8" },
           ]}
         />
       </Box>

@@ -1,7 +1,10 @@
 export default interface ItemMenu {
   title: string;
   path: string;
-  icon?: (
-    props: React.ComponentProps<"svg"> & { title?: string; titleId?: string }
-  ) => JSX.Element;
+  icon?: React.ForwardRefExoticComponent<
+    React.SVGProps<SVGSVGElement> & {
+      title?: string | undefined;
+      titleId?: string | undefined;
+    }
+  >;
 }

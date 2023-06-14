@@ -1,0 +1,11 @@
+{
+  "errors": {
+    "Required": "Este campo es obligatorio",
+    "mustBePositive": "El valor debe mayor a 0",
+    "mustBeValidPostalCode": "Postal code must be 2942 or 2930",
+    "mustBeValidCity": "City must be Baradero or San Pedro"
+  },
+  "footer": {
+    "rightsReserved": "All rights reserved"
+  }
+}

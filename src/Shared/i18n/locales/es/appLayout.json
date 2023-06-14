@@ -1,0 +1,14 @@
+{
+  "header": {
+    "menu": {
+      "myAccount": "Mi cuenta",
+      "configuration": "Configuración",
+      "logout": "Cerrar sesión"
+    }
+  },
+  "sidebar": {
+    "menu": {
+      "home": "Inicio"
+    }
+  }
+}
