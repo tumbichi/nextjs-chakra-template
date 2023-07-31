@@ -15,8 +15,6 @@ const CharacterList = () => {
 
   if (error) return <div>{error}</div>;
 
-  console.log("paginationMetadata :>> ", paginationMetadata);
-
   return (
     <>
       <Grid

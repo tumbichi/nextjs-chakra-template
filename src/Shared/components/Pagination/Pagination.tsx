@@ -4,9 +4,8 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useState,
 } from "react";
-import { Button, Center, Flex, Text } from "@chakra-ui/react";
+import { Button, Center, Flex } from "@chakra-ui/react";
 
 import PaginationUtils from "./utils/PaginationUtils";
 
