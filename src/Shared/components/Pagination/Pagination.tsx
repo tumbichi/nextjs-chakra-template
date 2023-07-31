@@ -21,18 +21,10 @@ interface PaginationProps {
 const Pagination = ({
   currentPage,
   setCurrentPage,
-  numberOfPages: defaultNumberOfPages,
+  numberOfPages,
   numberOfRows,
   rowsPerPage = 10,
 }: PaginationProps) => {
-  // const currentLastOrder = useMemo(
-  //   () => Math.min(currentPage * rowsPerPage, numberOfRows),
-  //   [currentPage, rowsPerPage, numberOfRows]
-  // );
-
-  const [numberOfPages, setNumberOfPages] =
-    useState<number>(defaultNumberOfPages);
-
   const goToNextPage = useCallback(() => {
     setCurrentPage((prevState) => prevState + 1);
   }, [setCurrentPage]);
@@ -71,8 +63,8 @@ const Pagination = ({
   );
 
   useEffect(() => {
-    setNumberOfPages(Math.ceil(numberOfRows / rowsPerPage));
-    goToFirstPage();
+    // setNumberOfPages(Math.ceil(numberOfRows / rowsPerPage));
+    // goToFirstPage();
   }, [numberOfRows, rowsPerPage, goToFirstPage]);
 
   if (numberOfPages <= 1) {
@@ -81,16 +73,6 @@ const Pagination = ({
 
   return (
     <Flex align="center" justify="space-between">
-      <Text color="primary.800" py={2}>
-        {/* <FormattedMessage
-          {...messages.showingNLinesOfNumberOfLines}
-          values={{
-            currentLastRows: `${currentLastOrder}`,
-            numberOfRows: `${numberOfRows}`,
-          }}
-        /> */}
-      </Text>
-
       <Center>
         <Button
           _first={{

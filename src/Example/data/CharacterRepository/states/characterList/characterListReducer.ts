@@ -1,5 +1,3 @@
-// import CharacterListAction from "../actions/allCharactersAction";
-
 import { FetchActionTypes } from "Shared/types/FetchPayload";
 import CharacterListAction from "../../actions/charactersListAction";
 import Character from "../../types/Character";
@@ -23,7 +21,7 @@ export const initialState: CharacterListState = {
   },
 };
 
-const allCharactersReducer = (
+const characterListReducer = (
   state: CharacterListState = initialState,
   action: CharacterListAction
 ): CharacterListState => {
@@ -59,4 +57,4 @@ const allCharactersReducer = (
   }
 };
 
-export default allCharactersReducer;
+export default characterListReducer;

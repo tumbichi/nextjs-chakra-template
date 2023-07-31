@@ -1,16 +1,21 @@
-import { Grid } from "@chakra-ui/react";
+import { Grid, Skeleton } from "@chakra-ui/react";
 import CharacterCard from "Example/components/CharacterCard";
-import { useState } from "react";
 import { Pagination } from "Shared/components";
-import useAllCharacters from "../data/CharacterRepository/hooks/useAllCharacters";
+import useCharacterListPaginated from "../data/CharacterRepository/hooks/useCharacterListPaginated";
 
 const CharacterList = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const { loading, characters, error, paginationMetadata } = useAllCharacters();
-
-  if (loading) return <div>Loading</div>;
+  const {
+    loading,
+    characters,
+    error,
+    paginationMetadata,
+    currentPage,
+    setCurrentPage,
+  } = useCharacterListPaginated();
 
   if (error) return <div>{error}</div>;
+
+  console.log("paginationMetadata :>> ", paginationMetadata);
 
   return (
     <>
@@ -25,14 +30,26 @@ const CharacterList = () => {
         }}
         w="100%"
       >
-        {characters.map((character) => (
-          <CharacterCard key={character.id} character={character} />
-        ))}
+        {loading
+          ? [
+              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+              20,
+            ].map((item) => (
+              <Skeleton
+                key={item}
+                h={{ base: "300px", sm: "330px", lg: "230px" }}
+                w={{ base: "full", lg: "md", "2xl": "27rem" }}
+              />
+            ))
+          : characters.map((character) => (
+              <CharacterCard key={character.id} character={character} />
+            ))}
       </Grid>
       <Pagination
         currentPage={currentPage}
         numberOfPages={paginationMetadata.pages}
         numberOfRows={paginationMetadata.count}
+        rowsPerPage={20}
         setCurrentPage={setCurrentPage}
       />
     </>

@@ -1,3 +1,4 @@
+import generateUrlWithQuery from "Shared/helpers/generateUrlWithQuery";
 import charactersClient from "../client";
 import Character from "../types/Character";
 import PagintionMetadata from "../types/PagintionMetadata";
@@ -7,9 +8,12 @@ interface GetAllCharactersResponse {
   info: PagintionMetadata;
 }
 
-export default async function getAllCharacters(): Promise<GetAllCharactersResponse> {
+export default async function getAllCharacters(
+  page: number
+): Promise<GetAllCharactersResponse> {
+  const url = generateUrlWithQuery("", { page });
   try {
-    const response = await charactersClient.get<GetAllCharactersResponse>("/");
+    const response = await charactersClient.get<GetAllCharactersResponse>(url);
     return response.data;
   } catch (e) {
     // TODO: Handle error

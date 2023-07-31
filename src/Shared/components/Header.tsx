@@ -38,7 +38,8 @@ const Header = ({
       h="70px"
       justifyContent="space-between"
       px={4}
-      w={{ lg: "calc(100vw - 70px - 16px)" }}
+      transition="width 0.4s"
+      w={{ lg: `calc(100vw - 16px - ${sidebar.isOpen ? "250px" : "70px"} )` }}
     >
       <Center py={3}>
         <IconButton
