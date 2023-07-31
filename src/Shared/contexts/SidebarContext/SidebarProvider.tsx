@@ -11,7 +11,7 @@ const SidebarProvider = ({ children }: PropsWithChildren): JSX.Element => {
     onClose: close,
     onToggle: toggle,
   } = useDisclosure({
-    defaultIsOpen: true,
+    defaultIsOpen: false,
   });
 
   return (

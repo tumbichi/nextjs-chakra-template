@@ -1,20 +1,21 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import {
   failFetchAction,
   startFetch,
   successFetchAction,
-} from "../actions/allCharactersAction";
+} from "../actions/charactersListAction";
 import allCharactersReducer, {
   initialState,
-} from "../reducers/allCharactersReducer";
+} from "../states/characterList/characterListReducer";
 import getAllCharacters from "../services/getAllCharacters";
 
-const useAllCharacters = () => {
+const useCharacterListPaginated = () => {
   const [state, dispatch] = useReducer(allCharactersReducer, initialState);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
     dispatch(startFetch());
-    getAllCharacters()
+    getAllCharacters(currentPage)
       .then((response) => {
         dispatch(
           successFetchAction({
@@ -24,16 +25,18 @@ const useAllCharacters = () => {
         );
       })
       .catch((e) => {
-        dispatch(failFetchAction({ error: e.message }));
+        dispatch(failFetchAction(e.message ?? "Error inesperado"));
       });
-  }, []);
+  }, [currentPage]);
 
   return {
-    loading: state.loading,
     characters: state.data,
-    paginationMetadata: state.paginationMetadata,
+    currentPage,
+    setCurrentPage,
     error: state.error,
+    loading: state.loading,
+    paginationMetadata: state.paginationMetadata,
   };
 };
 
-export default useAllCharacters;
+export default useCharacterListPaginated;

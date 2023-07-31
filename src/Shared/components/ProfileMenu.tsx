@@ -40,7 +40,7 @@ const ProfileMenu = ({
       </MenuButton>
       <MenuList>
         {menu.map((menuItem) => (
-          <MenuItem key={String(menuItem)} onClick={menuItem.onClick}>
+          <MenuItem key={menuItem.label?.toString()} onClick={menuItem.onClick}>
             {menuItem.label}
           </MenuItem>
         ))}

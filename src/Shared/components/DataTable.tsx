@@ -16,7 +16,7 @@ import {
 
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 
-interface BaseColumn<TValue> {
+export interface BaseColumn<TValue> {
   label: string;
   selector: (row: TValue) => ReactNode;
   styles?: TableCellProps;
@@ -27,21 +27,28 @@ interface DataTableProps<TValue> {
   data: TValue[];
   columns: BaseColumn<TValue>[];
   loading?: boolean;
+  onClickRow?: (row: TValue) => void;
 }
 
-function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
+function DataTable<T>({
+  columns,
+  data,
+  loading,
+  onClickRow,
+}: DataTableProps<T>) {
   return (
-    <>
+    <Box overflow="auto">
       <ChakraUITable size="sm">
         <Thead>
           <Tr>
-            {columns.map((column) => (
+            {columns.map((column, index) => (
               <Th
-                key={String(column)}
+                key={String(column.label) + index}
                 borderColor="neutral.300"
                 borderWidth="1px"
                 px={3}
                 py={4}
+                {...column.styles}
               >
                 {column.label}
               </Th>
@@ -50,11 +57,18 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
         </Thead>
         <Tbody>
           {!loading &&
-            data.map((row) => (
-              <Tr key={`tr-row-${String(row)}`}>
-                {columns.map(({ styles, onClick, selector }) => (
+            data.map((row, index) => (
+              <Tr
+                key={`tr-row-${index}`}
+                _hover={{
+                  bg: "neutral.200",
+                  cursor: "pointer",
+                }}
+                onClick={onClickRow ? () => onClickRow(row) : undefined}
+              >
+                {columns.map(({ styles, onClick, selector, label }) => (
                   <Td
-                    key={`td-row-${String(row)}`}
+                    key={`td-row-${label}-${index}`}
                     borderColor="neutral.300"
                     borderWidth="1px"
                     px={3}
@@ -78,7 +92,7 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
 
       {!loading && data.length === 0 && (
         <Center flexDir="column" h="100%" py={8} w="100%">
-          <Box bg="neutral.200" borderRadius="circular" p={8}>
+          <Box bg="neutral.200" borderRadius="full" p={8}>
             <Icon
               as={ArchiveBoxXMarkIcon}
               color="neutral.800"
@@ -90,7 +104,7 @@ function DataTable<T>({ columns, data, loading }: DataTableProps<T>) {
           </Text>
         </Center>
       )}
-    </>
+    </Box>
   );
 }
 

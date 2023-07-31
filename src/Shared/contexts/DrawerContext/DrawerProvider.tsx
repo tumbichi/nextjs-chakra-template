@@ -10,7 +10,7 @@ const DrawerProvider = ({ children }: PropsWithChildren): JSX.Element => {
     onOpen: open,
     onClose: close,
     onToggle: toggle,
-  } = useDisclosure();
+  } = useDisclosure({ defaultIsOpen: false });
 
   return (
     <DrawerContext.Provider value={{ isOpen, open, close, toggle }}>

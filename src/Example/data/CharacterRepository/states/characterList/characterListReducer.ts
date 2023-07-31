@@ -1,16 +1,16 @@
-import AllCharactersAction from "../actions/allCharactersAction";
+import { FetchActionTypes } from "Shared/types/FetchPayload";
+import CharacterListAction from "../../actions/charactersListAction";
+import Character from "../../types/Character";
+import PagintionMetadata from "../../types/PagintionMetadata";
 
-import Character from "../types/Character";
-import PagintionMetadata from "../types/PagintionMetadata";
-
-interface AllCharactersState {
+interface CharacterListState {
   data: Character[];
   loading: boolean;
   paginationMetadata: PagintionMetadata;
   error?: string;
 }
 
-export const initialState: AllCharactersState = {
+export const initialState: CharacterListState = {
   data: [],
   loading: false,
   paginationMetadata: {
@@ -21,18 +21,18 @@ export const initialState: AllCharactersState = {
   },
 };
 
-const allCharactersReducer = (
-  state: AllCharactersState = initialState,
-  action: AllCharactersAction
-): AllCharactersState => {
+const characterListReducer = (
+  state: CharacterListState = initialState,
+  action: CharacterListAction
+): CharacterListState => {
   switch (action.type) {
-    case "START_FETCH": {
+    case FetchActionTypes.Start: {
       return {
         ...state,
         loading: true,
       };
     }
-    case "SUCCESS_FETCH": {
+    case FetchActionTypes.Succeess: {
       const { data, paginationMetadata } = action.payload;
       return {
         ...state,
@@ -41,14 +41,13 @@ const allCharactersReducer = (
         paginationMetadata,
       };
     }
-    case "FAIL_FETCH": {
-      const { error } = action.payload;
+    case FetchActionTypes.Failure: {
       return {
         ...state,
         loading: false,
         data: initialState.data,
         paginationMetadata: initialState.paginationMetadata,
-        error,
+        error: action.payload,
       };
     }
 
@@ -58,4 +57,4 @@ const allCharactersReducer = (
   }
 };
 
-export default allCharactersReducer;
+export default characterListReducer;

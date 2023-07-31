@@ -1,7 +1,9 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import colors from "./colors";
+import badgeTheme from "./components/badgeTheme";
 import buttonTheme from "./components/buttonTheme";
+import headingTheme from "./components/headingTheme";
 
 const styles = {
   global: (props: Record<string, unknown>) => ({
@@ -20,7 +22,7 @@ const styles = {
 
 const theme = extendTheme({
   colors,
-  components: { Button: buttonTheme },
+  components: { Badge: badgeTheme, Button: buttonTheme, Heading: headingTheme },
   styles,
 });
 

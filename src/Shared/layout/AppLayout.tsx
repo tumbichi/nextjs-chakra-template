@@ -1,13 +1,11 @@
-/* eslint-disable no-console */
 import { PropsWithChildren } from "react";
-import { Flex, Stack } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 
-import { HomeModernIcon } from "@heroicons/react/24/outline";
+import { HomeModernIcon, ShareIcon } from "@heroicons/react/24/outline";
 
 import { SidebarProvider } from "Shared/contexts/SidebarContext";
-import { DrawerProvider } from "Shared/contexts/DrawerContexts";
-
-import { Drawer, Header, Sidebar } from "Shared/components";
+import { DrawerProvider } from "Shared/contexts/DrawerContext";
+import { Drawer, Header, Sidebar, Footer } from "Shared/components";
 import { useTranslation } from "Shared/i18n";
 
 const HEADER_HEIGHT = "70px";
@@ -18,34 +16,32 @@ const AppLayout = ({ children }: PropsWithChildren) => {
   const sidebarMenu = [
     {
       title: t("sidebar.menu.home"),
-      path: "#",
+      path: "/",
       icon: HomeModernIcon,
+    },
+    {
+      title: "Cool feature",
+      path: "/example",
+      icon: ShareIcon,
     },
   ];
 
   return (
     <DrawerProvider>
       <SidebarProvider>
+        <Drawer menu={sidebarMenu} />
         <Flex>
-          <Drawer menu={sidebarMenu} />
-          <Sidebar display={{ base: "none", sm: "block" }} menu={sidebarMenu} />
-          <Stack flex="1" spacing={0}>
-            <Header
-              menu={[
-                {
-                  label: t("header.menu.logout"),
-                  onClick: () => console.warn("Not implemented yet"),
-                },
-              ]}
-            />
-            <Flex
-              direction="column"
-              minH={`calc(100vh - ${HEADER_HEIGHT})`}
-              pt={4}
-              px={6}
-            >
+          <Sidebar
+            colorScheme="main"
+            display={{ base: "none", md: "block" }}
+            menu={sidebarMenu}
+          />
+          <Stack spacing={0} w="full">
+            <Header menu={[]} username="" />
+            <Box minH={`calc(100vh - ${HEADER_HEIGHT})`} pt={4}>
               {children}
-            </Flex>
+            </Box>
+            <Footer />
           </Stack>
         </Flex>
       </SidebarProvider>

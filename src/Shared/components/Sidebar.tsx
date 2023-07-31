@@ -8,6 +8,7 @@ import {
   Button,
   Icon,
   BoxProps,
+  ThemeTypings,
 } from "@chakra-ui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useSidebar } from "Shared/contexts/SidebarContext";
@@ -18,16 +19,17 @@ import ItemMenu from "../types/ItemMenu";
 
 interface SidebarProps extends BoxProps {
   menu: ItemMenu[];
+  colorScheme?: ThemeTypings["colorSchemes"];
 }
 
-const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
+const Sidebar = ({ colorScheme, menu, ...boxProps }: SidebarProps) => {
   const { isOpen, close } = useSidebar();
 
   return (
     <Box
       bg="neutral.200"
-      borderColor="neutral.300"
-      borderRightWidth="1px"
+      borderRight="1px"
+      borderRightColor="neutral.300"
       minW={isOpen ? "250px" : "70px"}
       transition="all"
       transitionDuration="0.3s"
@@ -58,7 +60,6 @@ const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
               <Box>
                 <IconButton
                   aria-label="Menu"
-                  colorScheme="gray"
                   icon={<Icon as={Bars3Icon} h={4} w={4} />}
                   mr={2}
                   size="xs"
@@ -81,7 +82,7 @@ const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
           <Link key={itemMenu.title} href={itemMenu.path}>
             <Button
               borderRadius={0}
-              colorScheme="gray"
+              colorScheme={colorScheme}
               iconSpacing={0}
               justifyContent={isOpen ? "flex-start" : "center"}
               leftIcon={isOpen ? <Icon as={itemMenu.icon} ml={4} /> : undefined}

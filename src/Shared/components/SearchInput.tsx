@@ -9,7 +9,7 @@ import {
 const SearchInput = () => (
   <InputGroup colorScheme="primary">
     <Input borderRadius="base" placeholder="Buscar" variant="filled" />
-    <InputRightElement p="atto">
+    <InputRightElement>
       <IconButton
         aria-label="search icon"
         borderRadius="base"
