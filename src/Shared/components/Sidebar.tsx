@@ -26,8 +26,8 @@ const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
   return (
     <Box
       bg="neutral.200"
-      borderColor="neutral.300"
-      borderRightWidth="1px"
+      borderRight="1px"
+      borderRightColor="neutral.300"
       minW={isOpen ? "250px" : "70px"}
       transition="all"
       transitionDuration="0.3s"
@@ -58,7 +58,6 @@ const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
               <Box>
                 <IconButton
                   aria-label="Menu"
-                  colorScheme="gray"
                   icon={<Icon as={Bars3Icon} h={4} w={4} />}
                   mr={2}
                   size="xs"
@@ -81,7 +80,6 @@ const Sidebar = ({ menu, ...boxProps }: SidebarProps) => {
           <Link key={itemMenu.title} href={itemMenu.path}>
             <Button
               borderRadius={0}
-              colorScheme="gray"
               iconSpacing={0}
               justifyContent={isOpen ? "flex-start" : "center"}
               leftIcon={isOpen ? <Icon as={itemMenu.icon} ml={4} /> : undefined}

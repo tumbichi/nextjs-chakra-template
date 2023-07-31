@@ -1,4 +1,4 @@
-import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig, theme } from "@chakra-ui/react";
 
 const pagination = defineStyle(({ colorMode }) => ({
   px: 3,
@@ -17,8 +17,12 @@ const pagination = defineStyle(({ colorMode }) => ({
 const buttonTheme = defineStyleConfig({
   variants: {
     pagination,
+    solid: {
+      colorScheme: "main",
+      ...theme.components.Button.variants?.solid,
+    },
   },
-  defaultProps: { colorScheme: "main" },
+  defaultProps: { variant: "solid" },
 });
 
 export default buttonTheme;
