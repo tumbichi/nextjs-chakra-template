@@ -25,7 +25,7 @@ const useCharacterListPaginated = () => {
         );
       })
       .catch((e) => {
-        dispatch(failFetchAction({ error: e.message }));
+        dispatch(failFetchAction(e.message ?? "Error inesperado"));
       });
   }, [currentPage]);
 
