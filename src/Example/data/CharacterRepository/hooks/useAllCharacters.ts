@@ -3,10 +3,10 @@ import {
   failFetchAction,
   startFetch,
   successFetchAction,
-} from "../actions/allCharactersAction";
+} from "../actions/charactersListAction";
 import allCharactersReducer, {
   initialState,
-} from "../reducers/allCharactersReducer";
+} from "../states/characterList/characterListReducer";
 import getAllCharacters from "../services/getAllCharacters";
 
 const useAllCharacters = () => {

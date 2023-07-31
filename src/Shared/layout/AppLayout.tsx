@@ -19,6 +19,10 @@ const AppLayout = ({ children }: PropsWithChildren) => {
       path: "#",
       icon: HomeModernIcon,
     },
+    {
+      title: "Cool feature",
+      path: "/example",
+    },
   ];
 
   return (

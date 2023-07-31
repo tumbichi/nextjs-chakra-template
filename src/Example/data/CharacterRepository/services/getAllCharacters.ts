@@ -12,6 +12,7 @@ export default async function getAllCharacters(): Promise<GetAllCharactersRespon
     const response = await charactersClient.get<GetAllCharactersResponse>("/");
     return response.data;
   } catch (e) {
+    // TODO: Handle error
     // eslint-disable-next-line no-console
     console.error("[Characters/serices] getAllCharacters", e);
     throw new Error("Error inesperado");
