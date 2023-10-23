@@ -37,9 +37,6 @@ const sizes = {
 
 const headingTheme = defineStyleConfig({
   sizes,
-  defaultProps: {
-    size: "lg",
-  },
 });
 
 export default headingTheme;

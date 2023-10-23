@@ -14,8 +14,8 @@ export interface RadioItem {
 interface FormRadioGroupProps {
   label: string;
   radioItems: RadioItem[];
-  selected: string;
-  onChange: (nextValue: string) => void;
+  selected?: string;
+  onChange?: (nextValue: string) => void;
 }
 
 function FormRadioGroup({

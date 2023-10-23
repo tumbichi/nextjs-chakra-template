@@ -1,5 +1,5 @@
-import BaseAction from "Shared/types/BaseAction";
-import FetchPayload, { FetchActionTypes } from "Shared/types/FetchPayload";
+import BaseAction from "Base/types/BaseAction";
+import FetchPayload, { FetchActionTypes } from "Base/types/FetchPayload";
 
 import Character from "../types/Character";
 import PagintionMetadata from "../types/PagintionMetadata";

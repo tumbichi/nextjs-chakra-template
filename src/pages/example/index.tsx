@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import CharacterList from "Example/features/CharacterList";
-import PageLayout from "Shared/layout/PageLayout";
+import PageLayout from "Base/layout/PageLayout";
 
 const CharacterPage = () => (
   <PageLayout>

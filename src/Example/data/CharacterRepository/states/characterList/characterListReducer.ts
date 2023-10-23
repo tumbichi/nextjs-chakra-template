@@ -1,4 +1,4 @@
-import { FetchActionTypes } from "Shared/types/FetchPayload";
+import { FetchActionTypes } from "Base/types/FetchPayload";
 import CharacterListAction from "../../actions/charactersListAction";
 import Character from "../../types/Character";
 import PagintionMetadata from "../../types/PagintionMetadata";

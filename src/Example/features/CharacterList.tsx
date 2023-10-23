@@ -1,6 +1,6 @@
 import { Grid, Skeleton } from "@chakra-ui/react";
 import CharacterCard from "Example/components/CharacterCard";
-import { Pagination } from "Shared/components";
+import { Pagination } from "Base/components";
 import useCharacterListPaginated from "../data/CharacterRepository/hooks/useCharacterListPaginated";
 
 const CharacterList = () => {

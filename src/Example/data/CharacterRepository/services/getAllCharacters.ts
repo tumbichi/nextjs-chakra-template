@@ -1,4 +1,4 @@
-import generateUrlWithQuery from "Shared/helpers/generateUrlWithQuery";
+import generateUrlWithQuery from "Base/helpers/generateUrlWithQuery";
 import charactersClient from "../client";
 import Character from "../types/Character";
 import PagintionMetadata from "../types/PagintionMetadata";

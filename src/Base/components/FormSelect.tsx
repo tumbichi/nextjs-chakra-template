@@ -12,7 +12,7 @@ import { forwardRef, Ref, useMemo } from "react";
 
 interface OptionItem {
   label: string;
-  value: string | number;
+  value: string | number | object;
 }
 
 interface FormSelectProps<

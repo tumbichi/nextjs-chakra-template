@@ -13,7 +13,7 @@
       ],
       "presentation": {
         "echo": false,
-        "reveal": "silent",
+        "reveal": "never",
         "focus": false,
         "panel": "dedicated"
       },

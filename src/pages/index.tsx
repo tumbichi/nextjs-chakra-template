@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Box } from "@chakra-ui/react";
-import DataTable from "Shared/components/DataTable";
+import DataTable from "Base/components/DataTable";
 
 interface ParcelRow {
   name: string;
