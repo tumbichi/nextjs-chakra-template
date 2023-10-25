@@ -11,6 +11,8 @@ permissions: read-all
 jobs:
   static-test:
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: Install node
