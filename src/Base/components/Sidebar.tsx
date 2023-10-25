@@ -11,7 +11,7 @@ import {
   ThemeTypings,
 } from "@chakra-ui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { useSidebar } from "Shared/contexts/SidebarContext";
+import { useSidebar } from "Base/contexts/SidebarContext";
 
 import Logo from "./Logo";
 import LogoSymbol from "./LogoSymbol";

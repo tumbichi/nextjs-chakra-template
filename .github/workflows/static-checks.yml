@@ -11,6 +11,8 @@ permissions: read-all
 jobs:
   static-test:
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: Install node
@@ -18,6 +20,7 @@ jobs:
         with:
           node-version: "18.3.0"
           cache: "npm"
+      - run: echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
       - run: npm ci
       - run: git fetch origin main
       - run: npm run lint

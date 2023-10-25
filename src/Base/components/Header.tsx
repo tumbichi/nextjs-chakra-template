@@ -8,12 +8,12 @@ import {
 } from "@chakra-ui/react";
 import { Bars3Icon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
-import { useSidebar } from "Shared/contexts/SidebarContext";
-import { useDrawer } from "Shared/contexts/DrawerContext";
+import { useSidebar } from "Base/contexts/SidebarContext";
+import { useDrawer } from "Base/contexts/DrawerContext";
 
-import { ProfileMenu } from "Shared/components";
+import { ProfileMenu } from "Base/components";
 
-import ContextMenuItem from "Shared/types/ContextMenuItem";
+import ContextMenuItem from "Base/types/ContextMenuItem";
 
 interface HeaderProps {
   menu: ContextMenuItem[];

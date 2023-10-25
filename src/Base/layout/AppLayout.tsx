@@ -3,10 +3,10 @@ import { Box, Flex, Stack } from "@chakra-ui/react";
 
 import { HomeModernIcon, ShareIcon } from "@heroicons/react/24/outline";
 
-import { SidebarProvider } from "Shared/contexts/SidebarContext";
-import { DrawerProvider } from "Shared/contexts/DrawerContext";
-import { Drawer, Header, Sidebar, Footer } from "Shared/components";
-import { useTranslation } from "Shared/i18n";
+import { SidebarProvider } from "Base/contexts/SidebarContext";
+import { DrawerProvider } from "Base/contexts/DrawerContext";
+import { Drawer, Header, Sidebar, Footer } from "Base/components";
+import { useTranslation } from "Base/i18n";
 
 const HEADER_HEIGHT = "70px";
 

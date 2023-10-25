@@ -16,9 +16,9 @@ import {
 } from "@chakra-ui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
-import { useDrawer } from "Shared/contexts/DrawerContext";
+import { useDrawer } from "Base/contexts/DrawerContext";
 
-import ItemMenu from "Shared/types/ItemMenu";
+import ItemMenu from "Base/types/ItemMenu";
 
 import Logo from "./Logo";
 

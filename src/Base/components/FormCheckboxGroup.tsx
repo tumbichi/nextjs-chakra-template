@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { FunctionComponent, PropsWithChildren } from "react";
 
-import formatWithThousand from "Shared/formatters/formatWithThousand";
+import formatWithThousand from "Base/utils/formatters/formatWithThousand";
 
 export interface CheckboxItem {
   value: string;
