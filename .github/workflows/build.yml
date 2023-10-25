@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: "18.3.0"
           cache: "npm"
+      - run: echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
       - run: npm ci
       - run: npm run build
       - name: Checkout
